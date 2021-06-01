@@ -20,17 +20,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="post: ${post}">
-            <td th:text="${post.slug}">slug</td>
-            <td th:text="${post.author}">author</td>
-            <td th:text="${post.title}">title</td>
-            <td th:text="${post.perex}">perex</td>
-            <td th:text="${post.body}">body</td>
-            <td th:text="${#temporals.format(post.published)}">date</td>
-
-            <!--            <td class="d-flex justify-content-end"><a href="/1" th:href="@{/{id}(id=${osoba.id})}"-->
-            <!--                                                      class="btn btn-primary">Detail</a></td>-->
-        </tr>
+        <div class="detail">
+            <div class ="detail">
+                <div th:each="post: ${post}">
+                <div class="title" th:utext="${post.title}">Title</div>
+                <div class="perex" th:utext="${post.perex}">Perex</div>
+                <div class="author" th:utext="${post.author}">Author</div>
+                <div class="published" th:utext="${post.published}">Published</div>
+                <div class="body" th:utext="${post.body}">Body</div>
+                <a href="/">Zpět</a>
+            </div>
+            </div>
+        </div>
         </tbody>
     </table>
 </main>

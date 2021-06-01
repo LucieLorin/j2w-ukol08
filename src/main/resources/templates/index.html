@@ -22,15 +22,14 @@
         </thead>
         <tbody>
         <tr th:each="post: ${post}">
-            <td th:text="${post.slug}">slug</td>
-            <td th:text="${post.author}">author</td>
-            <td th:text="${post.title}">title</td>
-            <td th:text="${post.perex}">perex</td>
-            <td th:text="${post.body}">body</td>
-            <td th:text="${#temporals.format(post.published)}">date</td>
+            <td th:utext="${post.slug}">slug</td>
+            <td th:utext="${post.author}">author</td>
+            <td th:utext="${post.title}">title</td>
+            <td th:utext="${post.perex}">perex</td>
+            <td th:utext="${post.body}">body</td>
+            <td th:utext="${#temporals.format(post.published)}">date</td>
 
-            <!--            <td class="d-flex justify-content-end"><a href="/1" th:href="@{/{id}(id=${osoba.id})}"-->
-            <!--                                                      class="btn btn-primary">Detail</a></td>-->
+        <a th:href="@{/post/{slug}(slug=${post.slug})}" class="button">Read</a>
         </tr>
         </tbody>
     </table>
